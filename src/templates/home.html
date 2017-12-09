@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}
+<title>Home</title>
+{% endblock title %}
+
+{% block content%}
+
+{% comment %} This stuff comes from the base content block. will not be reace   {% endcomment %}
+
+<p>
+   inside a tag 
+   <div style="color: red">{{ block.super }}</div>
+</p>
+
+<h1>Hello World!</h1>
+<p>Html coming through {{var}}</p>
+{% if bool_item %}
+<p>a random variable {{num}}</p>
+{% endif %}
+<ul>
+   {% for i in list%}
+   <li>
+      value : {{i}} 
+      {%if i|divisibleby:"2" %}
+      <span>Even number</span>
+      {%endif%}
+   </li>
+   {%endfor%}
+   <p>This "some item" should be empty</p>
+</ul>
+
+{%endblock content%}
+
+{% comment %} {%block content2%}
+some content from home 
+{%endblock content2%} {% endcomment %}

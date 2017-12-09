@@ -1,3 +1,4 @@
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,27 +6,41 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <title>Document</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+   <!-- Compiled and minified JavaScript -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script> {% block title %} {% endblock title %}
 </head>
 
 <body>
-   <h1>Hello World!</h1>
-   <p>Html coming through {{var}}</p>
-   {% if bool_item %}
-   <p>a random variable {{num}}</p>
-   {% endif %}
-   <ul>
-      {% for i in list%}
-      <li>
-         value : {{i}} 
-         {%if i|divisibleby:"2" %}
-         <span>Even number</span>
-         {%endif%}
-      </li>
-      {%endfor%}
-      <p>This "some item" should be empty</p>
+   {% comment %}
+   <h1>MuyPicky.com</h1> {% endcomment %}
+   <div class="nav-wrapper">
+      {% comment %} {% block content2%} Hello there ! {% endblock content2%} {% endcomment %}
+      <div class="">
+         <nav>
+            <ul>
+               <li>
+                  <a href="/">Home</a>
+               </li>
+               <li>
+                  <a href="/about/">About</a>
+               </li>
+               <li>
+                  <a href="/contact/">Contact</a>
+               </li>
+            </ul>
+         </nav>
+      </div>
+   </div>
+   <div class="container">
+      {% block content %}
+      <p>Hello there from supper</p>
+      {% endblock content %}
+   </div>
 
-   </ul>
+
+   <script type="text/javascript" src=""></script>
 </body>
 
 </html>

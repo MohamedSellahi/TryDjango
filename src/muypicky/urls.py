@@ -14,10 +14,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
+from django.conf.urls.static import static
+from django.contrib.staticfiles import views
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib import admin
-from restaurants import views
+from restaurants.views import home, about, contact
+from muypicky.settings import base
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$',views.home,name='home'), #
+    url(r'^$', home, name='home'),
+    url(r'^about/$', about, name='about'),
+    url(r'^contact/$', contact, name='contact'),
 ]
+
